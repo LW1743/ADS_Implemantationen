@@ -1,7 +1,5 @@
 package Queue;
 
-import java.util.EmptyStackException;
-
 public class Queue {
 
     int[] queue;
