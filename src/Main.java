@@ -1,7 +1,9 @@
 import BinarySearchTree.BinarySearchTree;
 import LinkedListStack.LinkedListStack;
+import List.List;
 import Queue.Queue;
 import Stack.Stack;
+
 
 public class Main {
 
@@ -62,6 +64,20 @@ public class Main {
         queue.enqueue(5);
 
         queue.printQueue();
+    }
+
+    static void list() {
+        List list = new List();
+        list.insert(1);
+        list.insert(2);
+        list.insert(3);
+        list.insert(4);
+        list.insert(5);
+
+        list.printList();
+        System.out.println();
+        list.delete(list.search(3));
+        list.printList();
     }
 
 }
