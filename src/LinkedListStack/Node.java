@@ -1,4 +1,4 @@
-package Stack;
+package LinkedListStack;
 
 public class Node {
     public int value = 0;

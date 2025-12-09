@@ -1,18 +1,11 @@
 import BinarySearchTree.BinarySearchTree;
+import LinkedListStack.LinkedListStack;
+import Queue.Queue;
 import Stack.Stack;
 
 public class Main {
 
     public static void main(String[] args) {
-
-        Stack stack = new Stack();
-
-        stack.push(1);
-        stack.push(2);
-        stack.push(3);
-        stack.push(4);
-
-        stack.printStackTopDown();
 
     }
 
@@ -39,5 +32,36 @@ public class Main {
         bst.inOrder();
     }
 
+    static void linkedListStack() {
+        LinkedListStack linkedListStack = new LinkedListStack();
+
+        linkedListStack.push(1);
+        linkedListStack.push(2);
+        linkedListStack.push(3);
+        linkedListStack.push(4);
+
+        linkedListStack.printStackTopDown();
+    }
+
+    static void stack() {
+        Stack stack = new Stack(10);
+        stack.push(1);
+        stack.push(2);
+        stack.push(3);
+        stack.push(4);
+
+        stack.printStackTopDown();
+    }
+
+    static void queue() {
+        Queue queue = new Queue(5);
+        queue.enqueue(1);
+        queue.enqueue(2);
+        queue.enqueue(3);
+        queue.enqueue(4);
+        queue.enqueue(5);
+
+        queue.printQueue();
+    }
 
 }

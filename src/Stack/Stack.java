@@ -3,44 +3,50 @@ package Stack;
 import java.util.EmptyStackException;
 
 public class Stack {
-    Node root;
 
-    public Stack() {
-        this.root = null;
-    }
+    public int[] stack;
+    private int top=-1;
 
-    public void push(int value) {
-        if(this.root == null) {
-            this.root = new Node(value, null);
-            return;
-        }
-        root = new Node(value, this.root);
+    public Stack(int length) {
+        stack = new int[length];
     }
 
     public boolean isEmpty() {
-        return this.root == null;
+        return top==0;
     }
 
-    public Node pop() {
+    public void push(int value) {
+        top++;
+        stack[top] = value;
+    }
+
+    public int pop() {
         if(isEmpty()) {
             throw new EmptyStackException();
         }
-        Node temp = root;
-        this.root = root.prev;
+
+        int temp = stack[top];
+
+        /*
+        //Hier könnte man stack[top] = 0 setzen um die Daten "zu vernichten"
+        //aber das ist unnötig, da sie beim nächsten push einfach überschrieben werden
+        stack[top] = 0;
+         */
+
+        top--;
         return temp;
     }
 
-    public Node top() {
+    public int top() {
         if(isEmpty()) {
             throw new EmptyStackException();
         }
-        return this.root;
+        return stack[top];
     }
 
     public void printStackTopDown() {
-        while(root!=null) {
-            System.out.println(pop().value);
+        for(int i = top; i>-1; i--){
+            System.out.println(stack[i]);
         }
     }
-
 }
