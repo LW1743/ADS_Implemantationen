@@ -1,4 +1,4 @@
-package LinkedListStack;
+package Datastructures.LinkedListStack;
 
 public class Node {
     public int value = 0;

@@ -1,14 +1,47 @@
-import BinarySearchTree.BinarySearchTree;
-import LinkedListStack.LinkedListStack;
-import List.List;
-import Queue.Queue;
-import Stack.Stack;
+import Algorithms.Sort.InsertionSort.InsertionSort;
+import Algorithms.Sort.QuickSort.QuickSort;
+import Algorithms.Sort.SortingAlgorithm;
+import Datastructures.BinarySearchTree.BinarySearchTree;
+import Datastructures.LinkedListStack.LinkedListStack;
+import Datastructures.List.List;
+import Datastructures.MinHeap.MinHeap;
+import Datastructures.Queue.Queue;
+import Datastructures.Stack.Stack;
+
+import java.lang.reflect.Method;
+import java.util.Arrays;
+import java.util.Random;
 
 
 public class Main {
 
     public static void main(String[] args) {
 
+    }
+    static void testSortingAlgorithm(SortingAlgorithm sortingAlgorithm, int[] Array) {
+        int[] ArrayOriginal = Arrays.copyOf(Array, Array.length);
+        int[] ArrayCopy = Arrays.copyOf(Array, Array.length);
+        sortingAlgorithm.sort(Array);
+        Arrays.sort(ArrayCopy);
+
+        for(int i = 0; i<Array.length; i++) {
+            if(Array[i] != ArrayCopy[i]) {
+                System.out.println("Index: " + i + " " + Array[i] + " != " + ArrayCopy[i]);
+            }
+        }
+        System.out.println("Original: " + Arrays.toString(ArrayOriginal));
+        System.out.println("Custom:   " + Arrays.toString(Array));
+        System.out.println("Correct:  " + Arrays.toString(ArrayCopy));
+    }
+    //Creates Array with rand values between 0 and 1000
+    static int[] createRandomArray(int length) {
+        int[] A = new int[length];
+        Random random = new Random();
+
+        for(int i = 0; i<A.length; i++) {
+            A[i] = random.nextInt(0,1001);
+        }
+        return A;
     }
 
     static void binarySearchTree() {
@@ -73,11 +106,22 @@ public class Main {
         list.insert(3);
         list.insert(4);
         list.insert(5);
+        list.insert(6);
+        list.insert(7);
+
 
         list.printList();
         System.out.println();
-        list.delete(list.search(3));
+        list.DeleteMulti(3);
         list.printList();
+    }
+
+
+    static void insertionSort() {
+        int[] test = createRandomArray(100);
+        InsertionSort insertionSort = new InsertionSort();
+
+        testSortingAlgorithm(insertionSort, test);
     }
 
 }

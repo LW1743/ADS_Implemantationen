@@ -1,4 +1,4 @@
-package List;
+package Datastructures.List;
 
 public class Node {
     int key;

@@ -1,4 +1,4 @@
-package Queue;
+package Datastructures.Queue;
 
 public class Node {
     int value;

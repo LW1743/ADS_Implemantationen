@@ -1,4 +1,4 @@
-package BinarySearchTree;
+package Datastructures.BinarySearchTree;
 
 public class Node {
     public Node parent, left, right;

@@ -1,4 +1,4 @@
-package List;
+package Datastructures.List;
 
 public class List {
 
@@ -34,6 +34,16 @@ public class List {
         }
         if(toDelete.next != null) {
             toDelete.next.prev = toDelete.prev;
+        }
+    }
+
+    public void DeleteMulti(int k) {
+        Node current = head;
+        while (current != null) {
+            if (current.key <= k) {
+                delete(current);
+            }
+                current = current.next;
         }
     }
 

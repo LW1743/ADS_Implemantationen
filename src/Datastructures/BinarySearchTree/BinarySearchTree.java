@@ -1,5 +1,4 @@
-package BinarySearchTree;
-import BinarySearchTree.Node;
+package Datastructures.BinarySearchTree;
 
 public class BinarySearchTree {
 
